@@ -7,7 +7,7 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
-
+        <link rel="icon" href="img/jelajah.jpg" type="image/png">
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -329,25 +329,18 @@
     <script src="js/main.js"></script>
     <script>
         function sendToWhatsApp() {
-            // Gather form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const project = document.getElementById('project').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var project = document.getElementById("project").value;
+            var subject = document.getElementById("subject").value;
+            var message = document.getElementById("message").value;
+        
+            var whatsappMessage = `Halo, Nama saya ${name}. Saya ingin bertanya tentang ${project}. Email saya adalah ${email} dan nomor telepon saya adalah ${phone}. Subjek: ${subject}. Pesan: ${message}`;
             
-            // Format the message
-            const messageBody = `Nama: ${name}\nEmail: ${email}\nTelepon: ${phone}\nProyek: ${project}\nSubjek: ${subject}\nPesan: ${message}`;
+            var whatsappURL = `https://wa.me/6281234567890?text=${encodeURIComponent(whatsappMessage)}`;
             
-            // Encode message for URL
-            const encodedMessage = encodeURIComponent(messageBody);
-            
-            // WhatsApp API URL
-            const whatsappURL = `https://wa.me/085161671600?text=${encodedMessage}`;
-            
-            // Redirect to WhatsApp
-            window.location.href = whatsappURL;
+            window.open(whatsappURL, '_blank');
         }
         </script>
         

@@ -33,7 +33,7 @@
         autoplay: true,
         smartSpeed: 500,
         dots: false,
-        loop: true,
+        // loop: true,
         nav : true,
         navText : [
             '<i class="bi bi-arrow-left"></i>',

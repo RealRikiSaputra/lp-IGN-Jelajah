@@ -7,7 +7,6 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
-
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +21,8 @@
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
+        
+        <link rel="icon" href="img/jelajah.jpg" type="image/png">
 
         <!-- Customized Bootstrap Stylesheet -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -448,7 +449,7 @@
                     </div> -->
                     <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
                         <div class="feature-item">
-                            <img src="img/feature-2.jpg" class="img-fluid rounded w-100" alt="Image">
+                            <img src="img/promo.jpeg" class="img-fluid rounded w-100" alt="Image">
                             <div class="feature-content p-4">
                                 <div class="feature-content-inner">
                                     <h4 class="text-white">Promo 100K</h4>
@@ -940,26 +941,22 @@
                 .catch(error => console.error('Error loading gallery:', error));
         });
         function sendToWhatsApp() {
-        var name = document.getElementById('name').value;
-        var nik = document.getElementById('nik').value;
-        var package = document.getElementById('package').value;
-        var address = document.getElementById('address').value;
+            var name = document.getElementById('name').value;
+            var nik = document.getElementById('nik').value;
+            var package = document.getElementById('package').value;
+            var address = document.getElementById('address').value;
 
-        console.log("Name : " + name)
-        console.log("nik : " + nik)
-        console.log("paket : " + package)
-        console.log("alamat : " + address)
+            // Encode the data to be sent via WhatsApp
+            var message = `*Order Paket WiFi*\n\nName: ${name}\nNIK: ${nik}\nPackage: Paket ${package}\nAlamat: ${address}`;
+            var encodedMessage = encodeURIComponent(message);
 
-        // Encode the data to be sent via WhatsApp
-        var message = `*Order Paket WiFi*\n\nName: ${name}\nNIK: ${nik}\nPackage: Paket ${package}\nAddress: ${address}`;
-        var encodedMessage = encodeURIComponent(message);
+            // Create the WhatsApp URL
+            var whatsappURL = `https://wa.me/?text=${encodedMessage}`;
 
-        // Create the WhatsApp URL
-        var whatsappURL = `https://wa.me/?text=${encodedMessage}`;
+            // Open WhatsApp in a new tab
+            window.open(whatsappURL, '_blank');
+        }
 
-        // Redirect to WhatsApp
-        window.location.href = whatsappURL;
-    }
     </script>
 
     
